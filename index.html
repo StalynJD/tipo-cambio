@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tipo de Cambio</title>
+</head>
+<body>
+    <div id="exchange-rate"></div>
+    <script>
+        (function() {
+            const apiKey = '5484af021b9948bb9f31513a52b53c2f'; // Tu clave API
+            const url = `https://openexchangerates.org/api/latest.json?app_id=${apiKey}`;
+
+            async function fetchExchangeRate() {
+                try {
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    const rate = data.rates.PEN; // Tipo de cambio de USD a PEN
+                    document.getElementById('exchange-rate').innerText = `1 USD = ${rate} PEN`;
+                } catch (error) {
+                    console.error('Error fetching exchange rate:', error);
+                    document.getElementById('exchange-rate').innerText = 'Error al obtener el tipo de cambio';
+                }
+            }
+
+            fetchExchangeRate();
+        })();
+    </script>
+</body>
+</html>
