@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Tipo de Cambio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        #exchange-rate {
+            font-size: 24px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <div id="exchange-rate"></div>
+    <div id="exchange-rate">Cargando...</div>
     <script>
         (function() {
             const apiKey = '5484af021b9948bb9f31513a52b53c2f'; // Tu clave API
@@ -28,3 +46,4 @@
     </script>
 </body>
 </html>
+
